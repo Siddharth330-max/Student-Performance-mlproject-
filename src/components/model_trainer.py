@@ -2,10 +2,10 @@ import os
 import sys 
 from dataclasses import dataclass  
 
-from sklearn.ensemble import(
-    AdaBoostRegressor,
-    RandomForestRegressor
-)
+from sklearn.ensemble import AdaBoostRegressor, RandomForestRegressor
+    
+   
+
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score 
 from sklearn.neighbors import KNeighborsRegressor
@@ -15,7 +15,7 @@ from sklearn.metrics import r2_score
 
 from src.exception import CustomException 
 from src.logger import logging
-from src.utils import save_object,evaluate_models
+from src.utils import save_object,evaluate_models    
 
 @dataclass
 class ModelTrainerConfig:
@@ -36,16 +36,19 @@ class ModelTrainer:
                 test_array[:,-1]
             )
             models = {
-                "Random Forest" : RandomForestRegressor(),
-                "Decision Tree" : DecisionTreeRegressor(),
-                "Linear Regression" : LinearRegression(),
-                "K-Nearest Neighbour Regressor" : KNeighborsRegressor(),
-                "Adaboost Regressor" : AdaBoostRegressor(),
-                "XGBRegressor" : XGBRegressor(),
+                   "Random Forest": RandomForestRegressor(),
+                   "Decision Tree": DecisionTreeRegressor(),
+                   "Linear Regression": LinearRegression(),
+                   "K-Nearest Neighbour Regressor": KNeighborsRegressor(),
+                   "AdaBoost Regressor": AdaBoostRegressor(),
+                   "XGBRegressor": XGBRegressor(),
             }
 
+
+            
+
             model_report:dict= evaluate_models(X_train = X_train , y_train = y_train,X_test = X_test ,y_test =  y_test,
-                                               models = models)
+                                               models = models )
             
             ##To get best model score from dict
             best_model_score = max(sorted(model_report.values()))  
