@@ -59,5 +59,12 @@ if __name__ == "__main__":
     data_transformation = DataTransformation()
     train_array , test_array ,_ = data_transformation.initiate_data_transformation(train_data , test_data)
 
+    print("Type of train_array:", type(train_array))
+    print("Shape of train_array:", train_array.shape)
+
+    print("Type of test_array:", type(test_array))
+    print("Shape of test_array:", test_array.shape)
+
+
     modeltrainer = ModelTrainer()
     print(modeltrainer.initiate_model_trainer(train_array , test_array ))
