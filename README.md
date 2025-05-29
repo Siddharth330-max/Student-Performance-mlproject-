@@ -4,6 +4,7 @@ A simple Machine Learning project to predict 'student's performance in maths' ba
 
 ## Project Structure
 This is an End to End Machine Learning project including :
+
 1.Exploratory Data Analysis
 
 2.Setup.py 
